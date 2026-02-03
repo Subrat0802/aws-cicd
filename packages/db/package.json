@@ -1,0 +1,22 @@
+{
+  "name": "@repo/db",
+  "module": "index.ts",
+  "private": true,
+  "exports":{
+    "./client":"./index.ts"
+  },
+  "prisma": {
+    "installCommand": "bun add"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5",
+    "@repo/typescript-config": "workspace: *"
+  },
+  "dependencies": {
+    "@prisma/client": "6.13.0",
+    "prisma": "6.13.0"
+  }
+}
