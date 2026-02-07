@@ -17,13 +17,13 @@ jobs:
       - name: Setup ssh key
         run: | 
           mkdir -p ~/.ssh
-          echo "${{ secrets.EC2_SSH_KEY }}" > ~/.ssh/subratdec.pem
-          chmod 600 ~/.ssh/subratdec.pem
+          echo "${{ secrets.EC2_SSH_KEY }}" > ~/.ssh/subratjan.pem
+          chmod 600 ~/.ssh/subratjan.pem
 
       - name: Deploy to EC2 
         run: | 
             ssh -o StrictHostKeyChecking=no \
-            -i ~/.ssh/subratdec.pem ubuntu@65.0.133.117 << 'EOF'
+            -i ~/.ssh/subratjan.pem ubuntu@3.93.177.150 << 'EOF'
             export NVM_DIR="$HOME/.nvm"
             [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
 
