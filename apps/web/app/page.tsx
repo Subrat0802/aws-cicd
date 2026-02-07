@@ -10,6 +10,7 @@ export default async function Home() {
     <div>
       <h1>All Todos</h1>
       <p>Subrat Mishra hi</p>
+      <p>Rewa</p>
       <TodoList todos={todos} />
     </div>
   );
