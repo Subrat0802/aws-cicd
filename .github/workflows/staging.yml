@@ -2,8 +2,8 @@ name: Deploy to staging
 
 on:
   push: 
-    branchs:
-      -main
+    branches:
+      - main
 
 jobs:
   redeploy-everything:
@@ -18,7 +18,7 @@ jobs:
         run: | 
           mkdir -p ~/.ssh
           echo "${{ secrets.EC2_SSH_KEY }}" > ~/.ssh/subratdec.pem
-          chmod 700 ~/.ssh/subratdec.pem
+          chmod 600 ~/.ssh/subratdec.pem
 
       - name: Deploy to EC2 
         run: | 
@@ -36,4 +36,3 @@ jobs:
             bun install
             pm2 restart aws-cicd
             EOF
-           
